@@ -77,7 +77,7 @@ class NextBusClient:
                 "Referer": "https://rider.umoiq.com/",
                 "Sec-Fetch-Dest": "empty",
                 "Sec-Fetch-Mode": "cors",
-                "User-Agent": ua.headers.get(),
+                "User-Agent": ua.headers.get()['user-agent'],
             }
         )
 
