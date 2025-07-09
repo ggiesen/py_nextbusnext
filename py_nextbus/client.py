@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ua_generator
 import json
 import logging
 from datetime import datetime
@@ -61,6 +62,7 @@ class NextBusClient:
         agency_id: str | None = None,
     ) -> None:
         self.agency_id: str | None = agency_id
+        ua = ua_generator.generate()
 
         self._session: requests.Session = requests.Session()
         self._session.headers.update(
@@ -75,7 +77,7 @@ class NextBusClient:
                 "Referer": "https://rider.umoiq.com/",
                 "Sec-Fetch-Dest": "empty",
                 "Sec-Fetch-Mode": "cors",
-                "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0",
+                "User-Agent": ua,
             }
         )
 

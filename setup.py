@@ -23,6 +23,7 @@ setup(
     python_requires=">=3.10",
     install_requires=[
         "requests",
+        "ua-generator",
     ],
     classifiers=[
         "License :: OSI Approved :: MIT License",
